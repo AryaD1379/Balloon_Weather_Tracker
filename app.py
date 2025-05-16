@@ -6,7 +6,7 @@ from geopy.distance import geodesic
 
 app = Flask(__name__)
 
-def is_valid_jump(p1, p2, max_km=300):
+def is_valid_jump(p1, p2, max_km=100):
     lat1, lon1 = p1['lat'], p1['lng']
     lat2, lon2 = p2['lat'], p2['lng']
     return geodesic((lat1, lon1), (lat2, lon2)).km <= max_km
